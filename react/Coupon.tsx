@@ -1,35 +1,16 @@
-import React from 'react'
-// import React, { useState } from 'react'
-import { Button } from 'vtex.styleguide'
-// import { FormattedMessage } from 'react-intl'
+import React, { useState }  from 'react'
+import { Button, Input} from 'vtex.styleguide'
+import { compose, graphql } from 'react-apollo'
+// import { Spinner } from 'vtex.styleguide'
 
-// import TranslatedTitle from './components/TranslatedTitle'
+import * as Coupons from './graphql/coupons.graphql'
 
 import styles from './styles.css'
 
-// const Example: StorefrontFunctionComponent<ExampleProps> = ({ title }) => {
-//   const [inputValue, setValue] = useState<string | null>(null)
+const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
 
-//   return (
-//     <div className={`${styles.container} flex flex-column pv6 ph4`}>
-//       <TranslatedTitle title={title} />
-//       <div className="t-body pv4">
-//         <FormattedMessage
-//           id="base.change-value"
-//           values={{ value: inputValue || '' }}
-//         />
-//       </div>
-//       <Input
-//         value={inputValue}
-//         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-//           setValue(e.target.value)
-//         }
-//       />
-//     </div>
-//   )
-// }
-
-const Coupon: StorefrontFunctionComponent<CouponProps> = ({  }) => {
+  const [isShowingPromoButton, setIsShowingPromoButton ] = useState(true);
+  const toggle = () => setIsShowingPromoButton(!isShowingPromoButton)
 
   return (
     <div className={`${styles.container} flex flex-column pv6 ph4`}>
@@ -37,16 +18,33 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({  }) => {
         <div className="ma0 dib">
           <h3 className="t-heading-3">Promotions</h3>
 
-          <Button variation="tertiary" collapseLeft>APPLY PROMO CODE</Button>
+          {isShowingPromoButton &&
+          <Button variation="tertiary" onClick={toggle} collapseLeft>APPLY PROMO CODE</Button>}
+
+
+          {!isShowingPromoButton && 
+            <div className="flex">
+              <Input
+                placeholder="Type here"
+                dataAttributes={{ 'hj-white-list': true, test: 'string' }}
+                label="Promo Code"
+              />
+
+              <Button variation="tertiary" size="regular" onClick={toggle}>APPLY</Button>
+            </div>
+          }
+
+          
         </div>
-        </div>
-        
+      </div>
+    
     </div>
   )
 }
 
 interface CouponProps {
-  title?: string
+  title?: string,
+  CouponsQuery: any
 }
 
 Coupon.schema = {
@@ -63,4 +61,8 @@ Coupon.schema = {
   },
 }
 
-export default Coupon
+export default compose(
+  graphql(Coupons.default, {
+    options: { ssr: false}  
+  })
+) (Coupon)

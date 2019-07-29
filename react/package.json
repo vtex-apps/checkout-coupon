@@ -5,9 +5,13 @@
   },
   "dependencies": {
     "@vtex/css-handles": "^1.0.0",
+    "apollo-boost": "^0.4.3",
     "classnames": "^2.2.6",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
     "ramda": "^0.26.1",
     "react": "^16.8.3",
+    "react-apollo": "^2.5.8",
     "react-dom": "^16.8.3",
     "react-intl": "^2.7.2"
   },
@@ -21,7 +25,7 @@
     "@types/react": "^16.8.10",
     "@types/react-intl": "^2.3.17",
     "@vtex/test-tools": "^0.2.0",
-    "apollo-client": "^2.5.1",
+    "apollo-client": "^2.6.3",
     "eslint": "^5.16.0",
     "eslint-config-vtex-react": "^4.1.0",
     "prettier": "^1.18.2",
