@@ -21,16 +21,16 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
           {isShowingPromoButton &&
           <Button variation="tertiary" onClick={toggle} collapseLeft>APPLY PROMO CODE</Button>}
 
-
           {!isShowingPromoButton && 
             <div className="flex">
               <Input
                 placeholder="Type here"
                 dataAttributes={{ 'hj-white-list': true, test: 'string' }}
                 label="Promo Code"
+                suffix={<Button variation="secondary" size="small" onClick={toggle}>APPLY</Button>}
               />
 
-              <Button variation="tertiary" size="regular" onClick={toggle}>APPLY</Button>
+              
             </div>
           }
 
