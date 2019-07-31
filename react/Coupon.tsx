@@ -10,7 +10,14 @@ import styles from './styles.css'
 const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
 
   const [isShowingPromoButton, setIsShowingPromoButton ] = useState(true);
+  const [coupon, setCoupon] = useState('');
   const toggle = () => setIsShowingPromoButton(!isShowingPromoButton)
+
+  const handleCouponChange = (evt: any) => {
+      evt.preventDefault();
+      const newCoupon = evt.target.value;
+      setCoupon(newCoupon);
+  }
 
   return (
     <div className={`${styles.container} flex flex-column pv6 ph4`}>
@@ -24,9 +31,11 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
           {!isShowingPromoButton && 
             <div className="flex">
               <Input
+                onChange={handleCouponChange}
                 placeholder="Type here"
                 dataAttributes={{ 'hj-white-list': true, test: 'string' }}
                 label="Promo Code"
+                value={coupon}
                 suffix={<Button variation="secondary" size="small" onClick={toggle}>APPLY</Button>}
               />
 
