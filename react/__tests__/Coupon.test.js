@@ -1,15 +1,21 @@
-import expect from 'expect';
-import { render } from '@vtex/test-tools/react';
+import expect from 'expect'
+import { render } from '@vtex/test-tools/react'
 import React from 'react'
+import Coupon from '../Coupon.tsx'
 
-describe('empty', () =>{
+describe('CouponComponent', () => {
+  const renderComponent = customProps => {
+    const wrapper = render(<Coupon></Coupon>)
+    return wrapper
+  }
 
-    it('should return true', () => {
-        expect(true).toEqual(true)
-    })
+  it('should be rendered', () => {
+    const component = renderComponent()
+    expect(component).toBeDefined()
+  })
 
-    it('should be a div', () =>{
-        const componente = render(<div>Hello</div>)
-        expect(componente).toBeDefined()
-    })
+  it('should match the snapshot', () => {
+    const componente = renderComponent()
+    expect(componente).toMatchSnapshot()
+  })
 })

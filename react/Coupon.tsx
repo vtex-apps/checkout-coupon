@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-import { Button, Input} from 'vtex.styleguide'
+import { Button, Input } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
 // import { Spinner } from 'vtex.styleguide'
 
