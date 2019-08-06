@@ -20,23 +20,26 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
   }
 
   return (
-    <div className={`${styles.container} flex flex-column pv6 ph4`}>
-      <div className="mb4 mr4">
+    <div className={`${styles.container} flex flex-column ph4`}>
+      <div className="mr4">
         <div className="ma0 dib">
-          <h3 className="t-heading-3">Promotions</h3>
 
           {isShowingPromoButton &&
-          <Button variation="tertiary" onClick={toggle} collapseLeft>APPLY PROMO CODE</Button>}
+            <div className="flex">
+              <p>Promo Code</p>
+              <Button className="ml7" variation="tertiary" onClick={toggle}>APPLY</Button>
+          </div>
+          }
 
           {!isShowingPromoButton && 
             <div className="flex">
               <Input
                 onChange={handleCouponChange}
-                placeholder="Type here"
+                placeholder="Promo Code"
                 dataAttributes={{ 'hj-white-list': true, test: 'string' }}
                 label="Promo Code"
                 value={coupon}
-                suffix={<Button variation="secondary" size="small" onClick={toggle}>APPLY</Button>}
+                suffix={<Button variation="secondary" size="small" onClick={toggle}>OK</Button>}
               />
 
               
@@ -46,7 +49,6 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
           
         </div>
       </div>
-    
     </div>
   )
 }
