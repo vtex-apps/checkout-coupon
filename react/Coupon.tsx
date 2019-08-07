@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-import { Button, Input } from 'vtex.styleguide'
+import { Button, Input, Tag } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
 // import { Spinner } from 'vtex.styleguide'
 
@@ -15,19 +15,32 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
 
   const handleCouponChange = (evt: any) => {
       evt.preventDefault();
-      const newCoupon = evt.target.value;
+      const newCoupon = evt.target.value.trim();
       setCoupon(newCoupon);
   }
 
   return (
-    <div className={`${styles.container} flex flex-column ph4`}>
+    <div className={`${styles.container} flex flex-column`}>
       <div className="mr4">
-        <div className="ma0 dib">
+        <div>
 
           {isShowingPromoButton &&
             <div className="flex">
-              <p>Promo Code</p>
-              <Button className="ml7" variation="tertiary" onClick={toggle}>APPLY</Button>
+              <div className="w-60 pv5 b">Promo Code</div>
+
+              <div className="w-40 pa2 tr">
+                {!coupon &&
+                    <Button variation="tertiary" onClick={toggle}>APPLY</Button>                    
+                }
+
+                {coupon &&
+                  <span className="pv3 ph2 mr4">
+                    <Tag size="large" onClick={toggle}>{coupon}</Tag>
+                  </span>
+                }
+              </div>
+              
+              
           </div>
           }
 
@@ -45,8 +58,6 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
               
             </div>
           }
-
-          
         </div>
       </div>
     </div>

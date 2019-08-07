@@ -10,8 +10,8 @@ describe('CouponComponent', () => {
   }
 
   it('should be rendered', () => {
-      const component = renderComponent()
-      expect(component).toBeDefined()
+    const component = renderComponent()
+    expect(component).toBeDefined()
   })
 
   it('should match the snapshot', () => {
