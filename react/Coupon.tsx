@@ -1,7 +1,6 @@
 import React, { useState }  from 'react'
 import { Button, Input, Tag } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
-// import { Spinner } from 'vtex.styleguide'
 
 import * as Coupons from './graphql/coupons.graphql'
 
@@ -39,13 +38,11 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
                   </span>
                 }
               </div>
-              
-              
-          </div>
+            </div>
           }
 
           {!isShowingPromoButton && 
-            <div className="flex">
+            <div className="pv4">
               <Input
                 onChange={handleCouponChange}
                 placeholder="Promo Code"
@@ -54,8 +51,6 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
                 value={coupon}
                 suffix={<Button variation="secondary" size="small" onClick={toggle}>OK</Button>}
               />
-
-              
             </div>
           }
         </div>
