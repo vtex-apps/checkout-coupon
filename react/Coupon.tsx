@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState } from 'react'
 import { Button, Input, Tag } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
 
@@ -6,42 +6,44 @@ import * as Coupons from './graphql/coupons.graphql'
 
 import styles from './styles.css'
 
-const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
-
-  const [isShowingPromoButton, setIsShowingPromoButton ] = useState(true);
-  const [coupon, setCoupon] = useState('');
+const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
+  const [isShowingPromoButton, setIsShowingPromoButton] = useState(true)
+  const [coupon, setCoupon] = useState('')
   const toggle = () => setIsShowingPromoButton(!isShowingPromoButton)
 
   const handleCouponChange = (evt: any) => {
-      evt.preventDefault();
-      const newCoupon = evt.target.value.trim();
-      setCoupon(newCoupon);
+    evt.preventDefault()
+    const newCoupon = evt.target.value.trim()
+    setCoupon(newCoupon)
   }
 
   return (
     <div className={`${styles.container} flex flex-column`}>
       <div className="mr4">
         <div>
-
-          {isShowingPromoButton &&
+          {isShowingPromoButton && (
             <div className="flex">
               <div className="w-60 pv5 b">Promo Code</div>
 
               <div className="w-40 pa2 tr">
-                {!coupon &&
-                    <Button variation="tertiary" onClick={toggle}>APPLY</Button>                    
-                }
+                {!coupon && (
+                  <Button variation="tertiary" onClick={toggle}>
+                    APPLY
+                  </Button>
+                )}
 
-                {coupon &&
-                  <span className="pv3 ph2 mr4">
-                    <Tag size="large" onClick={toggle}>{coupon}</Tag>
+                {coupon && (
+                  <span className="pv5 ph2 mr4">
+                    <Tag size="large" onClick={toggle}>
+                      {coupon}
+                    </Tag>
                   </span>
-                }
+                )}
               </div>
             </div>
-          }
+          )}
 
-          {!isShowingPromoButton && 
+          {!isShowingPromoButton && (
             <div className="pv4">
               <Input
                 onChange={handleCouponChange}
@@ -49,10 +51,14 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
                 dataAttributes={{ 'hj-white-list': true, test: 'string' }}
                 label="Promo Code"
                 value={coupon}
-                suffix={<Button variation="secondary" size="small" onClick={toggle}>OK</Button>}
+                suffix={
+                  <Button variation="secondary" size="small" onClick={toggle}>
+                    OK
+                  </Button>
+                }
               />
             </div>
-          }
+          )}
         </div>
       </div>
     </div>
@@ -60,7 +66,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({ }) => {
 }
 
 interface CouponProps {
-  title?: string,
+  title?: string
   CouponsQuery: any
 }
 
@@ -80,6 +86,6 @@ Coupon.schema = {
 
 export default compose(
   graphql(Coupons.default, {
-    options: { ssr: false}  
+    options: { ssr: false },
   })
-) (Coupon)
+)(Coupon)
