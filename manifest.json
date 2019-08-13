@@ -1,9 +1,9 @@
 {
   "vendor": "vtex",
-  "name": "base-store-component",
+  "name": "coupon",
   "version": "0.0.1",
-  "title": "IO Base Component",
-  "description": "IO Base component",
+  "title": "Coupon",
+  "description": "Checkout coupon component",
   "defaultLocale": "pt-BR",
   "builders": {
     "messages": "1.x",
@@ -15,6 +15,8 @@
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.styleguide": "9.x"
-  }
+    "vtex.styleguide": "9.x",
+    "vtex.checkout-graphql": "0.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
