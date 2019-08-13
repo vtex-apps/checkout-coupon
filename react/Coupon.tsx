@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Input, Tag } from 'vtex.styleguide'
+import { Button, Input, Tag, ButtonWithIcon, IconClose } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
 
 import * as Coupons from './graphql/coupons.graphql'
 
 import styles from './styles.css'
+
+const iconClose = <IconClose color="#727273"></IconClose>
 
 const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
   const [isShowingPromoButton, setIsShowingPromoButton] = useState(true)
@@ -17,15 +19,20 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
     setCoupon(newCoupon)
   }
 
+  const closeCouponInput = () => {
+    setCoupon('')
+    toggle()
+  }
+
   return (
     <div className={`${styles.container} flex flex-column`}>
       <div className="mr4">
         <div>
           {isShowingPromoButton && (
             <div className="flex">
-              <div className="w-60 pv5 b">Promo Code</div>
+              <div className="w-50 pv5 b">Promo Code</div>
 
-              <div className="w-40 pa2 tr">
+              <div className="w-50 pa2 tr">
                 {!coupon && (
                   <Button variation="tertiary" onClick={toggle}>
                     APPLY
@@ -44,19 +51,28 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
           )}
 
           {!isShowingPromoButton && (
-            <div className="pv4">
-              <Input
-                onChange={handleCouponChange}
-                placeholder="Promo Code"
-                dataAttributes={{ 'hj-white-list': true, test: 'string' }}
-                label="Promo Code"
-                value={coupon}
-                suffix={
-                  <Button variation="secondary" size="small" onClick={toggle}>
-                    OK
-                  </Button>
-                }
-              />
+            <div className="flex">
+              <div className="w-90 pv4">
+                <Input
+                  onChange={handleCouponChange}
+                  placeholder="Promo Code"
+                  dataAttributes={{ 'hj-white-list': true, test: 'string' }}
+                  label="Promo Code"
+                  value={coupon}
+                  suffix={
+                    <Button variation="secondary" size="small" onClick={toggle}>
+                      OK
+                    </Button>
+                  }
+                />
+              </div>
+              <div>
+                <ButtonWithIcon
+                  icon={iconClose}
+                  variation="tertiary"
+                  onClick={closeCouponInput}
+                ></ButtonWithIcon>
+              </div>
             </div>
           )}
         </div>
