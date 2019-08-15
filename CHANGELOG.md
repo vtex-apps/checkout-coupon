@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Added
+
+- Component ui details
+- Button with icon in order to close the input
+
 ## [0.1.0] - 2019-08-13
 
 ## Added
+
 - Coupon Component
 - Interface to be used by other apps
 - Tag that shows the current coupon
