@@ -4,8 +4,6 @@ import { compose, graphql } from 'react-apollo'
 
 import * as Coupons from './graphql/coupons.graphql'
 
-// import styles from './styles.css'
-
 const iconClose = <IconClose color="#727273"></IconClose>
 
 const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
