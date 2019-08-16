@@ -39,7 +39,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
 
           {coupon && (
             <div className="mb6">
-              <div className="t-small mb3">Promo Code</div>
+              <div className="c-on-base t-small mb3">Promo Code</div>
               <Tag onClick={resetCouponInput}>{coupon}</Tag>
             </div>
           )}
