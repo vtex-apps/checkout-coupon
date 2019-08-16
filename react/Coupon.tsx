@@ -20,6 +20,11 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
     toggle()
   }
 
+  const submitCoupon = (evt: any) => {
+    evt.preventDefault()
+    toggle()
+  }
+
   return (
     <Fragment>
       {isShowingPromoButton ? (
@@ -46,7 +51,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
       ) : (
           <form
             className="mb6"
-            onSubmit={toggle}>
+            onSubmit={submitCoupon}>
             <Input
               autoFocus
               onChange={handleCouponChange}
