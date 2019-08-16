@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import { Button, Input, Tag, ButtonWithIcon, IconClose } from 'vtex.styleguide'
+import React, { useState, Fragment } from 'react'
+import { Button, Input, Tag } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
 
 import * as Coupons from './graphql/coupons.graphql'
-
-const iconClose = <IconClose color="#727273"></IconClose>
 
 const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
   const [isShowingPromoButton, setIsShowingPromoButton] = useState(true)
@@ -17,63 +15,53 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
     setCoupon(newCoupon)
   }
 
-  const closeCouponInput = () => {
+  const resetCouponInput = () => {
     setCoupon('')
-    toggle()
+    setIsShowingPromoButton(false)
+  }
+
+  const submitCoupon = (evt: any) => {
+    evt.preventDefault()
+    setIsShowingPromoButton(true)
   }
 
   return (
-    <div>
-      <div>
-        {isShowingPromoButton && (
-          <div className="flex w-100 c-on-base lh-copy items-center">
-            <div className="flex-none fw6 fw5-l">Promo Code</div>
-
-            <div className="flex-auto tr">
-              {!coupon && (
-                <Button variation="tertiary" onClick={toggle}>
-                  APPLY
-                </Button>
-              )}
-
-              {coupon && (
-                <span className="pv5 ph2">
-                  <Tag size="large" onClick={toggle}>
-                    {coupon}
-                  </Tag>
-                </span>
-              )}
+    <Fragment>
+      {isShowingPromoButton ? (
+        <Fragment>
+          {!coupon && (
+            <div className="mb5">
+              <Button variation="tertiary" collapseLeft onClick={toggle}>
+                Apply Promo Code
+              </Button>
             </div>
-          </div>
-        )}
+          )}
 
-        {!isShowingPromoButton && (
-          <div className="flex">
-            <div className="w-90 pv4">
-              <Input
-                onChange={handleCouponChange}
-                placeholder="Promo Code"
-                dataAttributes={{ 'hj-white-list': true, test: 'string' }}
-                label="Promo Code"
-                value={coupon}
-                suffix={
-                  <Button variation="secondary" size="small" onClick={toggle}>
-                    OK
-                  </Button>
-                }
-              />
+          {coupon && (
+            <div className="mb6">
+              <div className="c-on-base t-small mb3">Promo Code</div>
+              <Tag onClick={resetCouponInput}>{coupon}</Tag>
             </div>
-            <div>
-              <ButtonWithIcon
-                icon={iconClose}
-                variation="tertiary"
-                onClick={closeCouponInput}
-              ></ButtonWithIcon>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+          )}
+        </Fragment>
+      ) : (
+        <form className="mb6" onSubmit={submitCoupon}>
+          <Input
+            autoFocus
+            onChange={handleCouponChange}
+            placeholder=""
+            dataAttributes={{ 'hj-white-list': true, test: 'string' }}
+            label="Promo Code"
+            value={coupon}
+            suffix={
+              <Button variation="secondary" size="small" type="submit">
+                Apply
+              </Button>
+            }
+          />
+        </form>
+      )}
+    </Fragment>
   )
 }
 
