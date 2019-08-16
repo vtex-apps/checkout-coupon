@@ -15,7 +15,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
     setCoupon(newCoupon)
   }
 
-  const closeCouponInput = () => {
+  const resetCouponInput = () => {
     setCoupon('')
     toggle()
   }
@@ -39,33 +39,27 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
 
           {coupon && (
             <div className="mb6">
-              <div className="t-small mb3">
-                Promo Code
-              </div>
-              <Tag onClick={closeCouponInput}>
-                {coupon}
-              </Tag>
+              <div className="t-small mb3">Promo Code</div>
+              <Tag onClick={resetCouponInput}>{coupon}</Tag>
             </div>
           )}
         </Fragment>
       ) : (
-          <form
-            className="mb6"
-            onSubmit={submitCoupon}>
-            <Input
-              autoFocus
-              onChange={handleCouponChange}
-              placeholder=""
-              dataAttributes={{ 'hj-white-list': true, test: 'string' }}
-              label="Promo Code"
-              value={coupon}
-              suffix={
-                <Button variation="secondary" size="small" type="submit">
-                  Apply
-                </Button>
-              }
-            />
-          </form>
+        <form className="mb6" onSubmit={submitCoupon}>
+          <Input
+            autoFocus
+            onChange={handleCouponChange}
+            placeholder=""
+            dataAttributes={{ 'hj-white-list': true, test: 'string' }}
+            label="Promo Code"
+            value={coupon}
+            suffix={
+              <Button variation="secondary" size="small" type="submit">
+                Apply
+              </Button>
+            }
+          />
+        </form>
       )}
     </Fragment>
   )
