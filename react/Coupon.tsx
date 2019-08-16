@@ -17,12 +17,12 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
 
   const resetCouponInput = () => {
     setCoupon('')
-    toggle()
+    setIsShowingPromoButton(false)
   }
 
   const submitCoupon = (evt: any) => {
     evt.preventDefault()
-    toggle()
+    setIsShowingPromoButton(true)
   }
 
   return (
