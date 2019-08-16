@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Button, Input, Tag } from 'vtex.styleguide'
+import { Button, Input, Tag, ButtonWithIcon, IconClose } from 'vtex.styleguide'
 import { compose, graphql } from 'react-apollo'
 
 import * as Coupons from './graphql/coupons.graphql'
 
-import styles from './styles.css'
+const iconClose = <IconClose color="#727273"></IconClose>
 
 const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
   const [isShowingPromoButton, setIsShowingPromoButton] = useState(true)
@@ -17,34 +17,39 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
     setCoupon(newCoupon)
   }
 
+  const closeCouponInput = () => {
+    setCoupon('')
+    toggle()
+  }
+
   return (
-    <div className={`${styles.container} flex flex-column`}>
-      <div className="mr4">
-        <div>
-          {isShowingPromoButton && (
-            <div className="flex">
-              <div className="w-60 pv5 b">Promo Code</div>
+    <div>
+      <div>
+        {isShowingPromoButton && (
+          <div className="flex w-100 c-on-base lh-copy items-center">
+            <div className="flex-none fw6 fw5-l">Promo Code</div>
 
-              <div className="w-40 pa2 tr">
-                {!coupon && (
-                  <Button variation="tertiary" onClick={toggle}>
-                    APPLY
-                  </Button>
-                )}
+            <div className="flex-auto tr">
+              {!coupon && (
+                <Button variation="tertiary" onClick={toggle}>
+                  APPLY
+                </Button>
+              )}
 
-                {coupon && (
-                  <span className="pv5 ph2 mr4">
-                    <Tag size="large" onClick={toggle}>
-                      {coupon}
-                    </Tag>
-                  </span>
-                )}
-              </div>
+              {coupon && (
+                <span className="pv5 ph2">
+                  <Tag size="large" onClick={toggle}>
+                    {coupon}
+                  </Tag>
+                </span>
+              )}
             </div>
-          )}
+          </div>
+        )}
 
-          {!isShowingPromoButton && (
-            <div className="pv4">
+        {!isShowingPromoButton && (
+          <div className="flex">
+            <div className="w-90 pv4">
               <Input
                 onChange={handleCouponChange}
                 placeholder="Promo Code"
@@ -58,8 +63,15 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
                 }
               />
             </div>
-          )}
-        </div>
+            <div>
+              <ButtonWithIcon
+                icon={iconClose}
+                variation="tertiary"
+                onClick={closeCouponInput}
+              ></ButtonWithIcon>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
