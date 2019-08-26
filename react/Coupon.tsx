@@ -1,29 +1,44 @@
-import React, { useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
+import { defineMessages, injectIntl, InjectedIntlProps } from 'react-intl'
 import { Button, Input, Tag } from 'vtex.styleguide'
-import { compose, graphql } from 'react-apollo'
 
-import * as Coupons from './graphql/coupons.graphql'
+import { useOrderCoupon } from 'vtex.order-coupon/OrderCoupon'
 
-const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
-  const [isShowingPromoButton, setIsShowingPromoButton] = useState(true)
-  const [coupon, setCoupon] = useState('')
+defineMessages({
+  Apply: {
+    id: 'store/coupon.Apply',
+    defaultMessage: 'Apply',
+  },
+  ApplyPromoCode: {
+    id: 'store/coupon.ApplyPromoCode',
+    defaultMessage: 'Apply Promo Code',
+  },
+  PromoCode: {
+    id: 'store/coupon.PromoCode',
+    defaultMessage: 'Promo Code',
+  },
+  CodeDoesntExist: {
+    id: 'store/coupon.CodeDoesntExist',
+    defaultMessage: `Code doesn't exist`,
+  },
+})
+
+const NO_ERROR = ''
+
+const Coupon: StorefrontFunctionComponent<CouponProps & InjectedIntlProps> = ({
+  intl,
+}) => {
   const toggle = () => setIsShowingPromoButton(!isShowingPromoButton)
 
-  const handleCouponChange = (evt: any) => {
-    evt.preventDefault()
-    const newCoupon = evt.target.value.trim()
-    setCoupon(newCoupon)
-  }
-
-  const resetCouponInput = () => {
-    setCoupon('')
-    setIsShowingPromoButton(false)
-  }
-
-  const submitCoupon = (evt: any) => {
-    evt.preventDefault()
-    setIsShowingPromoButton(true)
-  }
+  const {
+    coupon,
+    resetCouponInput,
+    submitCoupon,
+    handleCouponChange,
+    isShowingPromoButton,
+    setIsShowingPromoButton,
+    errorKey,
+  } = useOrderCoupon()
 
   return (
     <Fragment>
@@ -32,14 +47,16 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
           {!coupon && (
             <div className="mb5">
               <Button variation="tertiary" collapseLeft onClick={toggle}>
-                Apply Promo Code
+                {intl.formatMessage({ id: `store/coupon.ApplyPromoCode` })}
               </Button>
             </div>
           )}
 
           {coupon && (
             <div className="mb6">
-              <div className="c-on-base t-small mb3">Promo Code</div>
+              <div className="c-on-base t-small mb3">
+                {intl.formatMessage({ id: `store/coupon.PromoCode` })}
+              </div>
               <Tag onClick={resetCouponInput}>{coupon}</Tag>
             </div>
           )}
@@ -50,12 +67,18 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
             autoFocus
             onChange={handleCouponChange}
             placeholder=""
-            dataAttributes={{ 'hj-white-list': true, test: 'string' }}
-            label="Promo Code"
+            errorMessage={
+              errorKey
+                ? intl.formatMessage({
+                    id: `store/coupon.${errorKey}`,
+                  })
+                : NO_ERROR
+            }
+            label={intl.formatMessage({ id: `store/coupon.PromoCode` })}
             value={coupon}
             suffix={
               <Button variation="secondary" size="small" type="submit">
-                Apply
+                {intl.formatMessage({ id: `store/coupon.Apply` })}
               </Button>
             }
           />
@@ -66,26 +89,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = () => {
 }
 
 interface CouponProps {
-  title?: string
-  CouponsQuery: any
+  intl: object
 }
 
-Coupon.schema = {
-  title: 'editor.base-store-component.title',
-  description: 'editor.base-store-component.description',
-  type: 'object',
-  properties: {
-    title: {
-      title: 'editor.base-store-component.title.title',
-      description: 'editor.base-store-component.title.description',
-      type: 'string',
-      default: null,
-    },
-  },
-}
-
-export default compose(
-  graphql(Coupons.default, {
-    options: { ssr: false },
-  })
-)(Coupon)
+export default injectIntl(Coupon)
