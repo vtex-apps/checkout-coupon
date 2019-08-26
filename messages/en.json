@@ -1,8 +1,6 @@
 {
-  "editor.base-store-component.title": "IO Base App",
-  "editor.base-store-component.description": "A demo component for IO apps",
-  "editor.base-store-component.title.title": "Title",
-  "editor.base-store-component.title.description": "Specify a custom title",
-  "base.title": "Hello, World!!",
-  "base.change-value": "Change your value: {value}"
+  "store/coupon.Apply": "Apply",
+  "store/coupon.ApplyPromoCode": "Apply Promo Code",
+  "store/coupon.PromoCode": "Promo Code",
+  "store/coupon.CodeDoesntExist": "Code doesn't exist"
 }
