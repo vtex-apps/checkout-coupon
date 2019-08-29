@@ -28,21 +28,39 @@ const NO_ERROR = ''
 const Coupon: StorefrontFunctionComponent<CouponProps & InjectedIntlProps> = ({
   intl,
 }) => {
-  const toggle = () => setIsShowingPromoButton(!isShowingPromoButton)
+  const toggle = () => setShowPromoButton(!showPromoButton)
 
   const {
     coupon,
-    resetCouponInput,
-    submitCoupon,
-    handleCouponChange,
-    isShowingPromoButton,
-    setIsShowingPromoButton,
+    setCoupon,
+    insertCoupon,
+    showPromoButton,
+    setShowPromoButton,
     errorKey,
+    setErrorKey,
   } = useOrderCoupon()
+
+  const handleCouponChange = (evt: any) => {
+    evt.preventDefault()
+    const newCoupon = evt.target.value.trim()
+    setCoupon(newCoupon)
+  }
+
+  const resetCouponInput = () => {
+    insertCoupon('')
+    setCoupon('')
+    setShowPromoButton(false)
+  }
+
+  const submitCoupon = (evt: any) => {
+    evt.preventDefault()
+    setErrorKey(NO_ERROR)
+    insertCoupon(coupon)
+  }
 
   return (
     <Fragment>
-      {isShowingPromoButton ? (
+      {showPromoButton ? (
         <Fragment>
           {!coupon && (
             <div className="mb5">
