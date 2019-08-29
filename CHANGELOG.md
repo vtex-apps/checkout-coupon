@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Added
+
+- UI manipulation related functions
+
 ## [0.4.0] - 2019-08-26
 
 ## Removed
