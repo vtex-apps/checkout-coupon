@@ -20,7 +20,7 @@ describe('<Coupon />', () => {
     expect(component).toBeDefined()
   })
 
-  it('should show apply promo buttom', () => {
+  it('should show apply promo button', () => {
     const { getByText } = renderComponent({
       coupon: '',
       showPromoButton: true,
@@ -29,7 +29,6 @@ describe('<Coupon />', () => {
     const element = getByText(promoButtonText)
 
     expect(element).toBeTruthy()
-    expect(element).toBeDefined()
   })
 
   it('should show input when showPromoButton is false', () => {
