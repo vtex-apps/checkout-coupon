@@ -13,13 +13,21 @@ defineMessages({
     id: 'store/coupon.ApplyPromoCode',
     defaultMessage: 'Apply Promo Code',
   },
+  CodeDoesntExist: {
+    id: 'store/coupon.CodeDoesntExist',
+    defaultMessage: `Invalid Promo Code`,
+  },
+  ExpiredPromoCode: {
+    id: 'store/coupon.ExpiredCoupon',
+    defaultMessage: `This Promo Code has expired`,
+  },
   PromoCode: {
     id: 'store/coupon.PromoCode',
     defaultMessage: 'Promo Code',
   },
-  CodeDoesntExist: {
-    id: 'store/coupon.CodeDoesntExist',
-    defaultMessage: `Code doesn't exist`,
+  PromoCodeLabel: {
+    id: 'store/coupon.PromoCode',
+    defaultMessage: 'Promo Code',
   },
 })
 
@@ -92,7 +100,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps & InjectedIntlProps> = ({
                   })
                 : NO_ERROR
             }
-            label={intl.formatMessage({ id: `store/coupon.PromoCode` })}
+            label={intl.formatMessage({ id: `store/coupon.PromoCodeLabel` })}
             value={coupon}
             suffix={
               <Button variation="secondary" size="small" type="submit">
