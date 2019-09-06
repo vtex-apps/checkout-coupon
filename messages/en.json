@@ -2,5 +2,6 @@
   "store/coupon.Apply": "Apply",
   "store/coupon.ApplyPromoCode": "Apply Promo Code",
   "store/coupon.PromoCode": "Promo Code",
-  "store/coupon.CodeDoesntExist": "Code doesn't exist"
+  "store/coupon.CodeDoesntExist": "Invalid Promo Code",
+  "store/coupon.ExpiredPromoCode": "This Promo Code has expired"
 }
