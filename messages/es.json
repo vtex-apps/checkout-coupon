@@ -1,7 +1,8 @@
 {
   "store/coupon.Apply": "Aplicar",
-  "store/coupon.ApplyPromoCode": "Aplicar Cupón",
+  "store/coupon.ApplyPromoCode": "Aplicar Cupón de Descuento",
   "store/coupon.PromoCode": "Cupón de Descuento",
+  "store/coupon.PromoCodeLabel": "Código de Cupón",
   "store/coupon.CodeDoesntExist": "Este Cupón no es válido",
   "store/coupon.ExpiredPromoCode": "Este Cupón ha expirado"
 }
