@@ -15,11 +15,11 @@ defineMessages({
   },
   CodeDoesntExist: {
     id: 'store/coupon.CodeDoesntExist',
-    defaultMessage: `Invalid Promo Code`,
+    defaultMessage: `Invalid Promo Code.`,
   },
   ExpiredPromoCode: {
-    id: 'store/coupon.ExpiredCoupon',
-    defaultMessage: `This Promo Code has expired`,
+    id: 'store/coupon.ExpiredPromoCode',
+    defaultMessage: `This Promo Code has expired.`,
   },
   PromoCode: {
     id: 'store/coupon.PromoCode',
