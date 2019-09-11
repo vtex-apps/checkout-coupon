@@ -3,6 +3,6 @@
   "store/coupon.ApplyPromoCode": "Aplicar Cupón de Descuento",
   "store/coupon.PromoCode": "Cupón de Descuento",
   "store/coupon.PromoCodeLabel": "Código de Cupón",
-  "store/coupon.CodeDoesntExist": "Este Cupón no es válido.",
-  "store/coupon.ExpiredPromoCode": "Este Cupón ha expirado."
+  "store/coupon.couponNotFound": "Este Cupón no es válido.",
+  "store/coupon.couponExpired": "Este Cupón ha expirado."
 }
