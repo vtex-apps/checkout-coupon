@@ -13,12 +13,12 @@ defineMessages({
     id: 'store/coupon.ApplyPromoCode',
     defaultMessage: 'Apply Promo Code',
   },
-  CodeDoesntExist: {
-    id: 'store/coupon.CodeDoesntExist',
+  couponNotFound: {
+    id: 'store/coupon.couponNotFound',
     defaultMessage: `Invalid Promo Code.`,
   },
-  ExpiredPromoCode: {
-    id: 'store/coupon.ExpiredPromoCode',
+  couponExpired: {
+    id: 'store/coupon.couponExpired',
     defaultMessage: `This Promo Code has expired.`,
   },
   PromoCode: {
