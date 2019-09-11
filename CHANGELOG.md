@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.5] - 2019-09-11
+
 ## Changed
 
 - Change messages ids to be the same as the ones from Checkout API
