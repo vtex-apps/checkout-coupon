@@ -72,7 +72,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps & InjectedIntlProps> = ({
         <Fragment>
           {!coupon && (
             <div className="mb5">
-              <Button variation="tertiary" collapseLeft onClick={toggle}>
+              <Button variation="tertiary" collapseLeft noUpperCase onClick={toggle}>
                 {intl.formatMessage({ id: `store/coupon.ApplyPromoCode` })}
               </Button>
             </div>
