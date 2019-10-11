@@ -48,6 +48,14 @@ const Coupon: StorefrontFunctionComponent<CouponProps & InjectedIntlProps> = ({
     setErrorKey,
   } = useOrderCoupon()
 
+  const handleBlur = (evt: any) => {
+    evt.preventDefault()
+    const newCoupon = evt.target.value.trim()
+    if (!newCoupon) {
+      toggle()
+    }
+  }
+
   const handleCouponChange = (evt: any) => {
     evt.preventDefault()
     const newCoupon = evt.target.value.trim()
@@ -92,6 +100,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps & InjectedIntlProps> = ({
           <Input
             autoFocus
             onChange={handleCouponChange}
+            onBlur={handleBlur}
             placeholder=""
             errorMessage={
               errorKey

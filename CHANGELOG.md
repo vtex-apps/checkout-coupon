@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Changed
+
+- Component bevahior on blur when it has no content
+
 ## [0.4.6] - 2019-10-01
 
 ## Changed
