@@ -7,57 +7,65 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Styleguide components ids.
+
+### Changed
+
+- Use `FormattedMesage` instead of `intl`.
+
 ## [0.5.0] - 2019-10-14
 
 ## [0.4.7] - 2019-10-11
 
-## Changed
+### Changed
 
 - Component bevahior on blur when it has no content
 
 ## [0.4.6] - 2019-10-01
 
-## Changed
+### Changed
 
 - Button's label style
 
 ## [0.4.5] - 2019-09-11
 
-## Changed
+### Changed
 
 - Change messages ids to be the same as the ones from Checkout API
 
 ## [0.4.4] - 2019-09-11
 
-## Fixed
+### Fixed
 
 - Incorrect message id on defineMessages
 
 ## [0.4.3] - 2019-09-06
 
-## Changes
+### Changed
 
 - Intl entries
 
 ## [0.4.2] - 2019-09-05
 
-## Added
+### Added
 
 - Unit tests
 
 ## [0.4.1] - 2019-08-29
 
-## Added
+### Added
 
 - UI manipulation related functions
 
 ## [0.4.0] - 2019-08-26
 
-## Removed
+### Removed
 
 - All the component's logic
 
-## Added
+### Added
 
 - Consuming Order-coupon provider
 - Internationalization
@@ -66,14 +74,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.2.0] - 2019-08-16
 
-## Added
+### Added
 
 - Component ui details
 - Button with icon in order to close the input
 
 ## [0.1.0] - 2019-08-13
 
-## Added
+### Added
 
 - Coupon Component
 - Interface to be used by other apps
