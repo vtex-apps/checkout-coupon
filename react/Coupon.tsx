@@ -53,6 +53,7 @@ const Coupon: StorefrontFunctionComponent = () => {
           {!coupon && (
             <div className="mb5">
               <Button
+                id="add-coupon"
                 variation="tertiary"
                 collapseLeft
                 noUpperCase
@@ -68,13 +69,16 @@ const Coupon: StorefrontFunctionComponent = () => {
               <div className="c-on-base t-small mb3">
                 <FormattedMessage id="store/coupon.PromoCode" />
               </div>
-              <Tag onClick={resetCouponInput}>{coupon}</Tag>
+              <Tag id="coupon-code" onClick={resetCouponInput}>
+                {coupon}
+              </Tag>
             </div>
           )}
         </Fragment>
       ) : (
         <form className="mb6" onSubmit={submitCoupon}>
           <Input
+            id="coupon-input"
             autoFocus
             onChange={handleCouponChange}
             onBlur={handleBlur}
@@ -89,7 +93,12 @@ const Coupon: StorefrontFunctionComponent = () => {
             label={<FormattedMessage id="store/coupon.PromoCodeLabel" />}
             value={coupon}
             suffix={
-              <Button variation="secondary" size="small" type="submit">
+              <Button
+                id="apply-coupon"
+                variation="secondary"
+                size="small"
+                type="submit"
+              >
                 <FormattedMessage id="store/coupon.Apply" />
               </Button>
             }
