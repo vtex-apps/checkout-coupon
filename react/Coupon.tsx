@@ -1,10 +1,37 @@
 import React, { Fragment } from 'react'
-import { FormattedMessage } from 'react-intl'
+import { defineMessages, FormattedMessage } from 'react-intl'
 import { Button, Input, Tag } from 'vtex.styleguide'
 
 import { useOrderCoupon } from 'vtex.order-coupon/OrderCoupon'
 
 const NO_ERROR = ''
+
+defineMessages({
+  Apply: {
+    id: 'store/coupon.Apply',
+    defaultMessage: 'Apply',
+  },
+  ApplyPromoCode: {
+    id: 'store/coupon.ApplyPromoCode',
+    defaultMessage: 'Apply Promo Code',
+  },
+  couponNotFound: {
+    id: 'store/coupon.couponNotFound',
+    defaultMessage: `Invalid Promo Code.`,
+  },
+  couponExpired: {
+    id: 'store/coupon.couponExpired',
+    defaultMessage: `This Promo Code has expired.`,
+  },
+  PromoCode: {
+    id: 'store/coupon.PromoCode',
+    defaultMessage: 'Promo Code',
+  },
+  PromoCodeLabel: {
+    id: 'store/coupon.PromoCode',
+    defaultMessage: 'Promo Code',
+  },
+})
 
 const Coupon: StorefrontFunctionComponent = () => {
   const toggle = () => setShowPromoButton(!showPromoButton)
