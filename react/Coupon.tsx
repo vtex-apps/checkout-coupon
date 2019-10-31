@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
-import { Button, Input, Tag } from 'vtex.styleguide'
+import { ButtonPlain, Button, Input, Tag } from 'vtex.styleguide'
 
 import { useOrderCoupon } from 'vtex.order-coupon/OrderCoupon'
 
@@ -78,21 +78,15 @@ const Coupon: StorefrontFunctionComponent = () => {
       {showPromoButton ? (
         <Fragment>
           {!coupon && (
-            <div className="mb5">
-              <Button
-                id="add-coupon"
-                variation="tertiary"
-                collapseLeft
-                noUpperCase
-                onClick={toggle}
-              >
+            <div>
+              <ButtonPlain id="add-coupon" onClick={toggle}>
                 <FormattedMessage id="store/coupon.ApplyPromoCode" />
-              </Button>
+              </ButtonPlain>
             </div>
           )}
 
           {coupon && (
-            <div className="mb6">
+            <div>
               <div className="c-on-base t-small mb3">
                 <FormattedMessage id="store/coupon.PromoCode" />
               </div>
@@ -103,7 +97,7 @@ const Coupon: StorefrontFunctionComponent = () => {
           )}
         </Fragment>
       ) : (
-        <form className="mb6" onSubmit={submitCoupon}>
+        <form onSubmit={submitCoupon}>
           <Input
             id="coupon-input"
             autoFocus
