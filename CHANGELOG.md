@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Change Input + Button to InputButton component.
+
 ## [0.6.0] - 2019-11-06
 
 ## [0.5.2] - 2019-10-25

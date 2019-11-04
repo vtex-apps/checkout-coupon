@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
-import { ButtonPlain, Button, Input, Tag } from 'vtex.styleguide'
+import { ButtonPlain, Button, InputButton, Tag } from 'vtex.styleguide'
 
 import { useOrderCoupon } from 'vtex.order-coupon/OrderCoupon'
 
@@ -98,8 +98,9 @@ const Coupon: StorefrontFunctionComponent = () => {
         </Fragment>
       ) : (
         <form onSubmit={submitCoupon}>
-          <Input
+          <InputButton
             id="coupon-input"
+            button={<FormattedMessage id="store/coupon.Apply" />}
             autoFocus
             onChange={handleCouponChange}
             onBlur={handleBlur}
@@ -113,16 +114,6 @@ const Coupon: StorefrontFunctionComponent = () => {
             }
             label={<FormattedMessage id="store/coupon.PromoCodeLabel" />}
             value={coupon}
-            suffix={
-              <Button
-                id="apply-coupon"
-                variation="secondary"
-                size="small"
-                type="submit"
-              >
-                <FormattedMessage id="store/coupon.Apply" />
-              </Button>
-            }
           />
         </form>
       )}
