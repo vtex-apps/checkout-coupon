@@ -101,6 +101,7 @@ const Coupon: StorefrontFunctionComponent = () => {
           <InputButton
             id="coupon-input"
             button={<FormattedMessage id="store/coupon.Apply" />}
+            isLoading={false}
             autoFocus
             onChange={handleCouponChange}
             onBlur={handleBlur}
