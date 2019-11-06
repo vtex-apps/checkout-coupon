@@ -23,7 +23,7 @@
     "@types/ramda": "^0.26.5",
     "@types/react": "^16.8.10",
     "@types/react-intl": "^2.3.17",
-    "@vtex/styleguide": "^9.70.1",
+    "@vtex/styleguide": "^9.91.2",
     "@vtex/test-tools": "^0.2.0",
     "apollo-client": "^2.6.3",
     "eslint": "^5.15.1",
