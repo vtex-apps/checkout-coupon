@@ -32,21 +32,20 @@ describe('<Coupon />', () => {
   })
 
   it('should show input when showPromoButton is false', () => {
-    const { container } = renderComponent({
+    const { getByText } = renderComponent({
       coupon: '',
       showPromoButton: false,
     })
 
-    expect(container.querySelector('input')).toBeTruthy()
+    expect(getByText('Apply')).toBeTruthy()
   })
 
   it('should show coupon tag', () => {
-    const { container, getByText } = renderComponent({
+    const { getByText } = renderComponent({
       coupon: 'testcoupon',
       showPromoButton: true,
     })
 
-    expect(container.querySelector('input')).toBeFalsy()
     expect(getByText('testcoupon')).toBeTruthy()
   })
 })
