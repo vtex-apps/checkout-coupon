@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
-import { ButtonPlain, Button, InputButton, Tag } from 'vtex.styleguide'
+import { ButtonPlain, InputButton, Tag } from 'vtex.styleguide'
 
 import { useOrderCoupon } from 'vtex.order-coupon/OrderCoupon'
 
