@@ -1,17 +1,13 @@
-import { render } from '@vtex/test-tools/react'
+import { render, fireEvent } from '@vtex/test-tools/react'
 import React from 'react'
 import Coupon from '../Coupon'
-import { OrderCouponContext } from 'vtex.order-coupon/OrderCoupon'
 
 const promoButtonText = 'Apply Promo Code'
+const applyButtonText = 'Apply'
 
 describe('<Coupon />', () => {
   const renderComponent = (customProps: any) => {
-    const wrapper = render(
-      <OrderCouponContext.Provider value={customProps}>
-        <Coupon />
-      </OrderCouponContext.Provider>
-    )
+    const wrapper = render(<Coupon {...customProps} />)
     return wrapper
   }
 
@@ -23,7 +19,6 @@ describe('<Coupon />', () => {
   it('should show apply promo button', () => {
     const { getByText } = renderComponent({
       coupon: '',
-      showPromoButton: true,
     })
 
     const element = getByText(promoButtonText)
@@ -34,16 +29,17 @@ describe('<Coupon />', () => {
   it('should show input when showPromoButton is false', () => {
     const { getByText } = renderComponent({
       coupon: '',
-      showPromoButton: false,
     })
 
-    expect(getByText('Apply')).toBeTruthy()
+    const button = getByText(promoButtonText)
+    fireEvent.click(button)
+
+    expect(getByText(applyButtonText)).toBeTruthy()
   })
 
   it('should show coupon tag', () => {
     const { getByText } = renderComponent({
       coupon: 'testcoupon',
-      showPromoButton: true,
     })
 
     expect(getByText('testcoupon')).toBeTruthy()
