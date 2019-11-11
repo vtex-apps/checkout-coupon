@@ -39,6 +39,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
   const [showPromoButton, setShowPromoButton] = useState(true)
   const [errorKey, setErrorKey] = useState(couponErrorKey)
   const [currentCoupon, setCurrentCoupon] = useState(coupon)
+  const [loadingCoupon, setLoadingCoupon] = useState(false)
   const toggle = () => setShowPromoButton(!showPromoButton)
 
   const handleBlur = (evt: any) => {
@@ -66,6 +67,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
     evt.preventDefault()
     setErrorKey(NO_ERROR)
     insertCoupon(currentCoupon).then((result: boolean) => {
+      setLoadingCoupon(false)
       if (result) {
         setErrorKey(NO_ERROR)
         setShowPromoButton(true)
@@ -73,6 +75,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
         setErrorKey(couponErrorKey)
       }
     })
+    setLoadingCoupon(true)
   }
 
   return (
@@ -103,7 +106,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
           <InputButton
             id="coupon-input"
             button={<FormattedMessage id="store/coupon.Apply" />}
-            isLoading={false}
+            isLoading={loadingCoupon}
             autoFocus
             onChange={handleCouponChange}
             onBlur={handleBlur}
