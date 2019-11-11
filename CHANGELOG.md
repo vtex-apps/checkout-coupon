@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.9.0] - 2019-11-11
+
 ### Added
 
 - Spinner to the input in order to give the user a feedback of loading.
