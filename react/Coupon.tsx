@@ -2,6 +2,11 @@ import React, { Fragment, useState } from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
 import { ButtonPlain, InputButton, Tag } from 'vtex.styleguide'
 
+interface InsertCouponResult {
+  success: boolean
+  errorKey: string
+}
+
 const NO_ERROR = ''
 
 defineMessages({
@@ -34,11 +39,10 @@ defineMessages({
 const Coupon: StorefrontFunctionComponent<CouponProps> = ({
   coupon,
   insertCoupon,
-  couponErrorKey,
 }) => {
   const [showPromoButton, setShowPromoButton] = useState(true)
-  const [errorKey, setErrorKey] = useState(couponErrorKey)
-  const [currentCoupon, setCurrentCoupon] = useState(coupon)
+  const [errorKey, setErrorKey] = useState(NO_ERROR)
+  const [currentCoupon, setCurrentCoupon] = useState('')
   const [loadingCoupon, setLoadingCoupon] = useState(false)
   const toggle = () => setShowPromoButton(!showPromoButton)
 
@@ -66,13 +70,13 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
   const submitCoupon = (evt: any) => {
     evt.preventDefault()
     setErrorKey(NO_ERROR)
-    insertCoupon(currentCoupon).then((result: boolean) => {
+    insertCoupon(currentCoupon).then((result: InsertCouponResult) => {
       setLoadingCoupon(false)
-      if (result) {
+      if (result.success) {
         setErrorKey(NO_ERROR)
         setShowPromoButton(true)
       } else {
-        setErrorKey(couponErrorKey)
+        setErrorKey(result.errorKey)
       }
     })
     setLoadingCoupon(true)
@@ -82,7 +86,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
     <Fragment>
       {showPromoButton ? (
         <Fragment>
-          {!currentCoupon && (
+          {!coupon && (
             <div>
               <ButtonPlain id="add-coupon" onClick={toggle}>
                 <FormattedMessage id="store/coupon.ApplyPromoCode" />
@@ -90,13 +94,13 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
             </div>
           )}
 
-          {currentCoupon && (
+          {coupon && (
             <div>
               <div className="c-on-base t-small mb3">
                 <FormattedMessage id="store/coupon.PromoCode" />
               </div>
               <Tag id="coupon-code" onClick={resetCouponInput}>
-                {currentCoupon}
+                {coupon}
               </Tag>
             </div>
           )}
@@ -129,8 +133,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
 
 interface CouponProps {
   coupon: string
-  insertCoupon: (coupon: string) => Promise<boolean>
-  couponErrorKey: string
+  insertCoupon: (coupon: string) => Promise<InsertCouponResult>
 }
 
 export default Coupon
