@@ -70,7 +70,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
   const submitCoupon = (evt: any) => {
     evt.preventDefault()
     setErrorKey(NO_ERROR)
-    insertCoupon(currentCoupon).then((result: any) => {
+    insertCoupon(currentCoupon).then((result: InsertCouponResult) => {
       setLoadingCoupon(false)
       if (result.success) {
         setErrorKey(NO_ERROR)
