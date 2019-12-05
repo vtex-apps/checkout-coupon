@@ -1,8 +1,8 @@
 {
   "store/coupon.Apply": "Apply",
-  "store/coupon.ApplyPromoCode": "Apply Promo Code",
+  "store/coupon.ApplyPromoCode": "Apply promo code",
   "store/coupon.PromoCode": "Promo Code",
-  "store/coupon.PromoCodeLabel": "Promo Code",
-  "store/coupon.couponNotFound": "Invalid Promo Code.",
-  "store/coupon.couponExpired": "This Promo Code has expired."
+  "store/coupon.PromoCodeLabel": "Promo code",
+  "store/coupon.couponNotFound": "Invalid promo code.",
+  "store/coupon.couponExpired": "This promo code has expired."
 }
