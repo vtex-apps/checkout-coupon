@@ -16,15 +16,15 @@ defineMessages({
   },
   ApplyPromoCode: {
     id: 'store/coupon.ApplyPromoCode',
-    defaultMessage: 'Apply Promo Code',
+    defaultMessage: 'Apply promo code',
   },
   couponNotFound: {
     id: 'store/coupon.couponNotFound',
-    defaultMessage: `Invalid Promo Code.`,
+    defaultMessage: `Invalid promo code.`,
   },
   couponExpired: {
     id: 'store/coupon.couponExpired',
-    defaultMessage: `This Promo Code has expired.`,
+    defaultMessage: `This promo code has expired.`,
   },
   PromoCode: {
     id: 'store/coupon.PromoCode',
@@ -32,7 +32,7 @@ defineMessages({
   },
   PromoCodeLabel: {
     id: 'store/coupon.PromoCode',
-    defaultMessage: 'Promo Code',
+    defaultMessage: 'Promo code',
   },
 })
 
