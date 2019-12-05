@@ -2,7 +2,7 @@ import { render, fireEvent } from '@vtex/test-tools/react'
 import React from 'react'
 import Coupon from '../Coupon'
 
-const promoButtonText = 'Apply Promo Code'
+const promoButtonText = 'Apply promo code'
 const applyButtonText = 'Apply'
 
 describe('<Coupon />', () => {
