@@ -14,6 +14,7 @@ It shows a simple demonstration of the following features:
 - Using another VTEX IO App like `vtex.styleguide`.
 - Using CSS Modules to make your component customizable via CSS on a store theme.
 - Using tachyons tokens to quickly style your components.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
