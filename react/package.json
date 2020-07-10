@@ -26,13 +26,10 @@
     "@vtex/styleguide": "^9.91.3",
     "@vtex/test-tools": "^0.2.0",
     "apollo-client": "^2.6.3",
-    "eslint": "^5.15.1",
-    "eslint-config-vtex": "^10.1.0",
-    "eslint-config-vtex-react": "^4.1.0",
-    "prettier": "^1.18.2",
     "react-dom": "^16.8.6",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "3.7.3"
+    "typescript": "3.7.3",
+    "vtex.render-runtime": "https://browserslist--storecomponents.myvtex.com/_v/private/typings/linked/v1/vtex.render-runtime@8.111.0+build1594327796/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.124.2/public/@types/vtex.styleguide"
   },
   "version": "0.10.1"
 }
