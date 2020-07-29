@@ -6278,13 +6278,13 @@ vtex-tachyons@^3.2.0:
   resolved "https://registry.yarnpkg.com/vtex-tachyons/-/vtex-tachyons-3.2.0.tgz#81cf3491fea110e50ca91c318c02c714b6d0ae62"
   integrity sha512-RUK2HX/Z2+GTrFHcA3+gfl1Tib33WL49i6pnUZhE6/imHmiUBMfWQL7qQbYDhI9Pws57KFgdF+qSnla3Jjg6Fw==
 
-"vtex.render-runtime@https://browserslist--storecomponents.myvtex.com/_v/private/typings/linked/v1/vtex.render-runtime@8.111.0+build1594327796/public/@types/vtex.render-runtime":
-  version "8.111.0"
-  resolved "https://browserslist--storecomponents.myvtex.com/_v/private/typings/linked/v1/vtex.render-runtime@8.111.0+build1594327796/public/@types/vtex.render-runtime#b1f5f5263061130895adcdee5e61deb6d340a00a"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.111.1/public/@types/vtex.render-runtime":
+  version "8.111.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.111.1/public/@types/vtex.render-runtime#1bd9d36d074f1991a3dc6fa14ea193dea2c03ad0"
 
-"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.124.2/public/@types/vtex.styleguide":
-  version "9.124.2"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.124.2/public/@types/vtex.styleguide#23f1937bebae169c1d110594a4af3cc3ef05c601"
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.125.0/public/@types/vtex.styleguide":
+  version "9.125.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.125.0/public/@types/vtex.styleguide#35a7b4578d9221b527f3f39acd7c4b27cdf5360a"
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"

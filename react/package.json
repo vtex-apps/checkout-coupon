@@ -29,8 +29,8 @@
     "apollo-client": "^2.6.3",
     "react-dom": "^16.8.6",
     "typescript": "3.7.3",
-    "vtex.render-runtime": "https://browserslist--storecomponents.myvtex.com/_v/private/typings/linked/v1/vtex.render-runtime@8.111.0+build1594327796/public/@types/vtex.render-runtime",
-    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.124.2/public/@types/vtex.styleguide"
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.111.1/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.125.0/public/@types/vtex.styleguide"
   },
   "version": "0.10.1"
 }
