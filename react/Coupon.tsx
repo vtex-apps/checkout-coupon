@@ -3,6 +3,8 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl'
 import { ButtonPlain, InputButton, Tag } from 'vtex.styleguide'
 import { OrderCoupon } from 'vtex.order-coupon'
 
+import styles from './Coupon.css'
+
 const { useOrderCoupon } = OrderCoupon
 
 const NO_ERROR = ''
@@ -105,7 +107,7 @@ const Coupon: React.FC = () => {
           )}
         </Fragment>
       ) : (
-        <form onSubmit={submitCoupon}>
+        <form className={styles.inputForm} onSubmit={submitCoupon}>
           <InputButton
             id="coupon-input"
             button={intl.formatMessage({ id: 'store/coupon.Apply' })}
