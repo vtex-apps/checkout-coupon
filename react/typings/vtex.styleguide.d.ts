@@ -1,3 +1,5 @@
+import 'vtex.styleguide'
+
 declare module 'vtex.styleguide' {
   import { ComponentType } from 'react'
 
@@ -6,4 +8,7 @@ declare module 'vtex.styleguide' {
   interface InputProps {
     [key: string]: any
   }
+
+  export const InputButton
+  export const Tag
 }

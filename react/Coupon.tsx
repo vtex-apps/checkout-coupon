@@ -49,6 +49,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
   const handleBlur = (evt: any) => {
     evt.preventDefault()
     const newCoupon = evt.target.value.trim()
+
     if (!newCoupon) {
       setErrorKey(NO_ERROR)
       toggle()
@@ -58,6 +59,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
   const handleCouponChange = (evt: any) => {
     evt.preventDefault()
     const newCoupon = evt.target.value.trim()
+
     setCurrentCoupon(newCoupon)
   }
 
@@ -111,6 +113,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
             id="coupon-input"
             button={<FormattedMessage id="store/coupon.Apply" />}
             isLoading={loadingCoupon}
+            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
             onChange={handleCouponChange}
             onBlur={handleBlur}

@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@vtex/test-tools/react'
 import React from 'react'
+
 import Coupon from '../Coupon'
 
 const promoButtonText = 'Apply promo code'
@@ -8,11 +9,13 @@ const applyButtonText = 'Apply'
 describe('<Coupon />', () => {
   const renderComponent = (customProps: any) => {
     const wrapper = render(<Coupon {...customProps} />)
+
     return wrapper
   }
 
   it('should be rendered', () => {
     const component = renderComponent({})
+
     expect(component).toBeDefined()
   })
 
@@ -32,6 +35,7 @@ describe('<Coupon />', () => {
     })
 
     const button = getByText(promoButtonText)
+
     fireEvent.click(button)
 
     expect(getByText(applyButtonText)).toBeTruthy()
