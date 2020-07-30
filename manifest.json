@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "coupon",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "title": "Coupon",
   "description": "Checkout coupon component",
   "defaultLocale": "pt-BR",
