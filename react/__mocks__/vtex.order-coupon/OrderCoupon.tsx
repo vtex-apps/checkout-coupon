@@ -1,18 +1,27 @@
-import { createContext, useContext } from 'react'
+import React, { createContext, useContext } from 'react'
 
-interface Context {
+interface InsertCouponResult {
+  success: boolean
+  errorKey: string
+}
+
+interface OrderCouponContext {
   coupon: string
-  showPromoButton: boolean
+  insertCoupon: (coupon: string) => Promise<InsertCouponResult>
 }
 
-export const OrderCouponContext = createContext<Context | undefined>(undefined)
+const CouponContext = createContext<undefined | OrderCouponContext>(undefined)
 
-export const useOrderCoupon = () => {
-  const context = useContext(OrderCouponContext)
-
-  if (context === undefined) {
-    throw new Error('useOrderCoupon must be used within a OrderCouponProvider')
-  }
-
-  return context
+export const OrderCouponProvider: React.FC<OrderCouponContext> = ({
+  coupon,
+  insertCoupon,
+  children,
+}) => {
+  return (
+    <CouponContext.Provider value={{ coupon, insertCoupon }}>
+      {children}
+    </CouponContext.Provider>
+  )
 }
+
+export const useOrderCoupon = () => useContext(CouponContext)
