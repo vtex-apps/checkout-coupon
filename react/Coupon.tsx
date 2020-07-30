@@ -1,15 +1,13 @@
 import React, { Fragment, useState } from 'react'
-import { defineMessages, FormattedMessage } from 'react-intl'
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl'
 import { ButtonPlain, InputButton, Tag } from 'vtex.styleguide'
+import { OrderCoupon } from 'vtex.order-coupon'
 
-interface InsertCouponResult {
-  success: boolean
-  errorKey: string
-}
+const { useOrderCoupon } = OrderCoupon
 
 const NO_ERROR = ''
 
-defineMessages({
+const messages = defineMessages({
   Apply: {
     id: 'store/coupon.Apply',
     defaultMessage: 'Apply',
@@ -36,17 +34,16 @@ defineMessages({
   },
 })
 
-const Coupon: StorefrontFunctionComponent<CouponProps> = ({
-  coupon,
-  insertCoupon,
-}) => {
+const Coupon: React.FC = () => {
+  const { coupon, insertCoupon } = useOrderCoupon()
   const [showPromoButton, setShowPromoButton] = useState(true)
   const [errorKey, setErrorKey] = useState(NO_ERROR)
   const [currentCoupon, setCurrentCoupon] = useState('')
   const [loadingCoupon, setLoadingCoupon] = useState(false)
   const toggle = () => setShowPromoButton(!showPromoButton)
+  const intl = useIntl()
 
-  const handleBlur = (evt: any) => {
+  const handleBlur = (evt: React.FocusEvent<HTMLInputElement>) => {
     evt.preventDefault()
     const newCoupon = evt.target.value.trim()
 
@@ -56,7 +53,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
     }
   }
 
-  const handleCouponChange = (evt: any) => {
+  const handleCouponChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     evt.preventDefault()
     const newCoupon = evt.target.value.trim()
 
@@ -69,10 +66,10 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
     setShowPromoButton(false)
   }
 
-  const submitCoupon = (evt: any) => {
+  const submitCoupon = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
     setErrorKey(NO_ERROR)
-    insertCoupon(currentCoupon).then((result: InsertCouponResult) => {
+    insertCoupon(currentCoupon).then(result => {
       setLoadingCoupon(false)
       if (result.success) {
         setErrorKey(NO_ERROR)
@@ -111,7 +108,7 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
         <form onSubmit={submitCoupon}>
           <InputButton
             id="coupon-input"
-            button={<FormattedMessage id="store/coupon.Apply" />}
+            button={intl.formatMessage({ id: 'store/coupon.Apply' })}
             isLoading={loadingCoupon}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
@@ -119,11 +116,11 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
             onBlur={handleBlur}
             placeholder=""
             errorMessage={
-              errorKey ? (
-                <FormattedMessage id={`store/coupon.${errorKey}`} />
-              ) : (
-                NO_ERROR
-              )
+              errorKey
+                ? intl.formatMessage(
+                    messages[errorKey as keyof typeof messages]
+                  )
+                : NO_ERROR
             }
             label={<FormattedMessage id="store/coupon.PromoCodeLabel" />}
             value={currentCoupon}
@@ -132,11 +129,6 @@ const Coupon: StorefrontFunctionComponent<CouponProps> = ({
       )}
     </Fragment>
   )
-}
-
-interface CouponProps {
-  coupon: string
-  insertCoupon: (coupon: string) => Promise<InsertCouponResult>
 }
 
 export default Coupon

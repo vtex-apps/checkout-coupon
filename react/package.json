@@ -4,31 +4,21 @@
     "lint": "tsc --noEmit && eslint --ext ts,tsx ."
   },
   "dependencies": {
-    "@vtex/css-handles": "^1.0.0",
-    "apollo-boost": "^0.4.3",
-    "classnames": "^2.2.6",
-    "graphql": "^14.4.2",
-    "graphql-tag": "^2.10.1",
-    "ramda": "^0.26.1",
     "react": "^16.8.3",
-    "react-apollo": "^2.5.8",
-    "react-intl": "^2.7.2"
+    "react-dom": "^16.8.6",
+    "react-intl": "^3.12.1"
   },
   "devDependencies": {
     "@apollo/react-testing": "^3.1.4",
-    "@types/classnames": "^2.2.7",
+    "@testing-library/dom": "^7.21.5",
+    "@testing-library/jest-dom": "^5.11.1",
     "@types/graphql": "^14.2.0",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.0",
-    "@types/prop-types": "^15.7.0",
-    "@types/ramda": "^0.26.5",
     "@types/react": "^16.8.10",
-    "@types/react-intl": "^2.3.17",
-    "@vtex/styleguide": "^9.91.3",
+    "@vtex/styleguide": "^9.125.0",
     "@vtex/test-tools": "^3.1.0",
-    "apollo-client": "^2.6.3",
-    "react-dom": "^16.8.6",
-    "typescript": "3.7.3",
+    "vtex.order-coupon": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-coupon@0.7.1/public/@types/vtex.order-coupon",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.111.1/public/@types/vtex.render-runtime",
     "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.125.0/public/@types/vtex.styleguide"
   },
