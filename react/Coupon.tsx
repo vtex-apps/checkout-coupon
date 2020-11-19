@@ -88,7 +88,7 @@ const Coupon: React.FC = () => {
       {showPromoButton ? (
         <Fragment>
           {!coupon && (
-            <div>
+            <div className={styles.couponWrapper}>
               <ButtonPlain id="add-coupon" onClick={toggle}>
                 <FormattedMessage id="store/coupon.ApplyPromoCode" />
               </ButtonPlain>
@@ -96,8 +96,8 @@ const Coupon: React.FC = () => {
           )}
 
           {coupon && (
-            <div>
-              <div className="c-on-base t-small mb3">
+            <div className={styles.tagWrapper}>
+              <div className={`${styles.tagText} c-on-base t-small mb3`}>
                 <FormattedMessage id="store/coupon.PromoCode" />
               </div>
               <Tag id="coupon-code" onClick={resetCouponInput}>

@@ -1,3 +1,9 @@
 .inputForm :global(.vtex-input) input {
   min-width: 0;
 }
+
+.couponWrapper {}
+
+.tagWrapper {}
+
+.tagText {}
