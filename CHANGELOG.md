@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added 
+- Crowdin file for crowdin integration.
+
 ## [0.10.3] - 2020-07-30
 ### Fixed
 - Error calling `insertCoupon` function when component is outside `checkout-cart` context.
