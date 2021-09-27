@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "تطبيق",
+  "store/coupon.ApplyPromoCode": "تطبيق الرمز الترويجي",
+  "store/coupon.PromoCode": "الرمز الترويجي",
+  "store/coupon.PromoCodeLabel": "الرمز الترويجي",
+  "store/coupon.couponNotFound": "رمز ترويجي غير صالح.",
+  "store/coupon.couponExpired": "انتهت صلاحية هذا الرمز الترويجي."
+}
