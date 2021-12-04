@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Aplică",
+  "store/coupon.ApplyPromoCode": "Aplică codul promoțional",
+  "store/coupon.PromoCode": "Cod promoțional",
+  "store/coupon.PromoCodeLabel": "Cod promoțional",
+  "store/coupon.couponNotFound": "Cod promoțional invalid.",
+  "store/coupon.couponExpired": "Acest cod promoțional a expirat."
+}
