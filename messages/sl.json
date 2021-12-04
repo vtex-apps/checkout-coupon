@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Uporabi",
+  "store/coupon.ApplyPromoCode": "Uporabi promocijsko kodo",
+  "store/coupon.PromoCode": "Promocijska koda",
+  "store/coupon.PromoCodeLabel": "Promocijska koda",
+  "store/coupon.couponNotFound": "Neveljavna promocijska koda.",
+  "store/coupon.couponExpired": "Ta promocijska koda se je iztekla."
+}
