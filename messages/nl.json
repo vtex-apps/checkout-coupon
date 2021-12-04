@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Toepassen",
+  "store/coupon.ApplyPromoCode": "Promocode toepassen",
+  "store/coupon.PromoCode": "Promocode",
+  "store/coupon.PromoCodeLabel": "Promocode",
+  "store/coupon.couponNotFound": "Ongeldige promocode.",
+  "store/coupon.couponExpired": "Deze promocode is verlopen."
+}
