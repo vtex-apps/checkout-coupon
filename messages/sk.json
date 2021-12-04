@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Použiť",
+  "store/coupon.ApplyPromoCode": "Použiť promo kód",
+  "store/coupon.PromoCode": "Promo kód",
+  "store/coupon.PromoCodeLabel": "Promo kód",
+  "store/coupon.couponNotFound": "Neplatný promo kód.",
+  "store/coupon.couponExpired": "Platnosť tohto promo kódu uplynula."
+}
