@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Εφαρμογή",
+  "store/coupon.ApplyPromoCode": "Εφαρμογή κωδικού promo",
+  "store/coupon.PromoCode": "Κωδικός Promo",
+  "store/coupon.PromoCodeLabel": "Κωδικός Promo",
+  "store/coupon.couponNotFound": "Άκυρος κωδικός promo.",
+  "store/coupon.couponExpired": "Αυτός ο κωδικός promo έχει λήξει."
+}
