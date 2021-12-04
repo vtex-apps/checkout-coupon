@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Alkalmazás",
+  "store/coupon.ApplyPromoCode": "Promóciós kód alkalmazása",
+  "store/coupon.PromoCode": "Promóciós kód",
+  "store/coupon.PromoCodeLabel": "Promóciós kód",
+  "store/coupon.couponNotFound": "Érvénytelen promóciós kód.",
+  "store/coupon.couponExpired": "A promóciós kód lejárt."
+}
