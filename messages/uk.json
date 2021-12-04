@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Застосувати",
+  "store/coupon.ApplyPromoCode": "Застосувати промокод",
+  "store/coupon.PromoCode": "Промокод",
+  "store/coupon.PromoCodeLabel": "Промокод",
+  "store/coupon.couponNotFound": "Недійсний промокод.",
+  "store/coupon.couponExpired": "Термін дії промокоду закінчився."
+}
