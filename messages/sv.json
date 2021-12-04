@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Tillämpa",
+  "store/coupon.ApplyPromoCode": "Tillämpa kampanjkod",
+  "store/coupon.PromoCode": "Kampanjkod",
+  "store/coupon.PromoCodeLabel": "Kampanjkod",
+  "store/coupon.couponNotFound": "Ogiltig kampanjkod.",
+  "store/coupon.couponExpired": "Denna kampanjkod har upphört att gälla."
+}
