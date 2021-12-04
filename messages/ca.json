@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Aplica",
+  "store/coupon.ApplyPromoCode": "Aplica el codi promocional",
+  "store/coupon.PromoCode": "Codi promocional",
+  "store/coupon.PromoCodeLabel": "Codi promocional",
+  "store/coupon.couponNotFound": "Codi promocional no vàlid.",
+  "store/coupon.couponExpired": "Aquest codi promocional ha caducat."
+}
