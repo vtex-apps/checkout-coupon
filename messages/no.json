@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Bruk",
+  "store/coupon.ApplyPromoCode": "Bruk kampanjekode",
+  "store/coupon.PromoCode": "Kampanjekode",
+  "store/coupon.PromoCodeLabel": "Kampanjekode",
+  "store/coupon.couponNotFound": "Ugyldig kampanjekode.",
+  "store/coupon.couponExpired": "Denne kampankekoden er utløpt."
+}
