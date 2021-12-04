@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "적용",
+  "store/coupon.ApplyPromoCode": "프로모션 코드 적용",
+  "store/coupon.PromoCode": "프로모션 코드",
+  "store/coupon.PromoCodeLabel": "프로모션 코드",
+  "store/coupon.couponNotFound": "잘못된 프로모션 코드입니다.",
+  "store/coupon.couponExpired": "이 프로모션 코드는 만료되었습니다."
+}
