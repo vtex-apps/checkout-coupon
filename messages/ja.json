@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "適用する",
+  "store/coupon.ApplyPromoCode": "プロモーションコードを適用する",
+  "store/coupon.PromoCode": "プロモーションコード",
+  "store/coupon.PromoCodeLabel": "プロモーションコード",
+  "store/coupon.couponNotFound": "無効なプロモーションコードです。",
+  "store/coupon.couponExpired": "このプロモーションコードは期限切れです。"
+}
