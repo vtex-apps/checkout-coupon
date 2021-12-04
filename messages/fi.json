@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Käytä",
+  "store/coupon.ApplyPromoCode": "Lisää kampanjakoodi",
+  "store/coupon.PromoCode": "Kampanjakoodi",
+  "store/coupon.PromoCodeLabel": "Kampanjakoodi",
+  "store/coupon.couponNotFound": "Virheellinen kampanjakoodi.",
+  "store/coupon.couponExpired": "Tämä kampanjakoodi on vanhentunut."
+}
