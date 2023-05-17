@@ -1,0 +1,8 @@
+{
+  "store/coupon.Apply": "Terapkan",
+  "store/coupon.ApplyPromoCode": "Masukkan kode voucher",
+  "store/coupon.PromoCode": "Kode promo",
+  "store/coupon.PromoCodeLabel": "Kode promo",
+  "store/coupon.couponNotFound": "Kode promo tidak valid.",
+  "store/coupon.couponExpired": "Kode promo ini tidak berlaku."
+}
